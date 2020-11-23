@@ -1,7 +1,7 @@
 function onlyUnique(value, index, self) {
     return self.indexOf(value) === index;
 }
-fetch('https://api.github.com/users/roodymike/repos')
+fetch('https://api.github.com/users/{your_user_here}/repos')
     .then((response) => {
         return response.json();
     })
@@ -20,12 +20,8 @@ fetch('https://api.github.com/users/roodymike/repos')
         for (i = 0; i < repo_count; i++) {
             reposize += parseInt(data[i].size);
         }
-        //console.log(language_array);
-        //console.log(language_count);
-        //console.log(reposize / 1000);
-        document.getElementById('totalreposize').innerHTML = (reposize / 1000).toFixed(2);
-        document.getElementById('repo_count').innerHTML = repo_count;
-        document.getElementById('language_count').innerHTML = language_count;
-        //console.log(Object.keys(data).length);
-
+        console.log(language_array);
+        console.log(language_count);
+        console.log(reposize / 1000);
+        console.log(Object.keys(data).length);
     });
